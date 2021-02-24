@@ -9,7 +9,7 @@ import (
 	"github.com/hguandl/dr-feeder/v2/common"
 	"github.com/hguandl/dr-feeder/v2/notifier"
 	"github.com/hguandl/dr-feeder/v2/notifier/wxmsgapp"
-	"github.com/hguandl/rhodes-deliver/v2/database"
+	"github.com/hguandl/rhodes-deliver/database"
 	"github.com/lithammer/shortuuid"
 )
 

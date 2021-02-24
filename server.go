@@ -2,12 +2,16 @@ package main
 
 import (
 	"flag"
+	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hguandl/rhodes-deliver/v2/database"
+	"github.com/hguandl/rhodes-deliver/database"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
+
+// Version is current `git describe --tags` infomation.
+var Version string = "v0.9.0"
 
 func setupDb(dbPath string) {
 	var err error = nil
@@ -20,10 +24,16 @@ func setupDb(dbPath string) {
 }
 
 func main() {
+	prtVerPtr := flag.Bool("V", false, "Print current version")
 	dbPathPtr := flag.String("d", "data.db", "Database path")
 	lsAddrPtr := flag.String("s", ":8080", "Listen address")
 	uiPathPtr := flag.String("w", "webapp/build", "Listen address")
 	flag.Parse()
+
+	if *prtVerPtr {
+		fmt.Printf("rhodes-deliver %s\n", Version)
+		return
+	}
 
 	setupDb(*dbPathPtr)
 	router := gin.Default()
