@@ -150,11 +150,11 @@ export default function Subscribe(props) {
           </Button>
         <Grid container justify="space-between">
           <Grid item>
-            <Link href="https://hguandl.com/posts/weibo-watcher-deploy/" target="_blank" variant="body2">
+            <Link href="https://hguandl.com/posts/rhodes-deliver-guide/" target="_blank" variant="body2">
               图文教程
             </Link>
             <Box display="inline" m={1} />
-            <Link href="#" variant="body2">
+            <Link href="https://www.bilibili.com/video/BV1tK4y1H7Bo" variant="body2">
               视频教程
             </Link>
           </Grid>
