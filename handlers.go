@@ -100,6 +100,7 @@ func handleFeed(c *gin.Context) {
 	var subscribers []WxSubscriber
 	database.DB.Find(&subscribers)
 	for _, s := range subscribers {
-		go notifier.FromWxAPIClient(&s.Client).Push(payload)
+		client := s.Client
+		go notifier.FromWxAPIClient(&client).Push(payload)
 	}
 }
