@@ -11,7 +11,7 @@ import (
 )
 
 // Version is current `git describe --tags` infomation.
-var Version string = "v1.0.1"
+var Version string = "v1.0.2"
 
 func setupDb(dbPath string) {
 	var err error = nil
