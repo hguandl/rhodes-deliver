@@ -84,6 +84,7 @@ func handleFeed(c *gin.Context) {
 	title := c.PostForm("title")
 	body := c.PostForm("body")
 	url := c.PostForm("url")
+	picURL := c.PostForm("picurl")
 
 	if title == "" || body == "" || url == "" {
 		c.Status(http.StatusBadRequest)
@@ -92,9 +93,10 @@ func handleFeed(c *gin.Context) {
 	c.Status(http.StatusOK)
 
 	payload := common.NotifyPayload{
-		Title: title,
-		Body:  body,
-		URL:   url,
+		Title:  title,
+		Body:   body,
+		URL:    url,
+		PicURL: picURL,
 	}
 
 	var subscribers []WxSubscriber

@@ -11,7 +11,7 @@ import (
 )
 
 // Version is current `git describe --tags` infomation.
-var Version string = "v1.0.2"
+var Version string = "v1.0.3"
 
 func setupDb(dbPath string) {
 	var err error = nil
@@ -27,7 +27,7 @@ func main() {
 	prtVerPtr := flag.Bool("V", false, "Print current version")
 	dbPathPtr := flag.String("d", "data.db", "Database path")
 	lsAddrPtr := flag.String("s", ":8080", "Listen address")
-	uiPathPtr := flag.String("w", "webapp-build", "Listen address")
+	uiPathPtr := flag.String("w", "webapp", "Listen address")
 	flag.Parse()
 
 	if *prtVerPtr {
